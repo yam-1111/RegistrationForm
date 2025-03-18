@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*navbar*/
+.bg-blue{
+    background-color: #1738f6;
+   
+}
+
+nav{
+    padding: 20px;
+}
+.navbar-brand-img{
+    width:14%;
+    padding: 0 30px;
+    margin: 5px 0;
+
+}
+
+.btn-link {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 20px;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 8px; /* Optional for rounded corners */
+}
+
+.btn-link:hover {
+    color: #1738f6; /* Change text color on hover */
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.95); /* Slight background tint */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* White glow effect */
+    border-radius: 20px; /* Soft rounded effect */
+}
+
+/*content*/
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex: 1;
+}
+
+.promo-text{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: black;
+}
+
+/*footer*/
+
+.footer {
+    background-color: #0000FF; /* Blue background */
+    color: white;
+    padding: 20px 20px;
+    font-size: 14px;
+    position: relative; /* Add this to make the footer a positioning context */
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.bottom-bar {
+    background-color: #19191a; /* Slightly darker blue */
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+.sm-logo {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* This ensures true vertical centering */
+    left: 1px; /* Fixed distance from left */
+    max-width: 20; /* Fixed width instead of percentage */
+    height: auto;
+}
+
+#dpo {
+    width: 80%;
+}

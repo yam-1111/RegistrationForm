@@ -1,0 +1,23 @@
+
+input{
+    border-radius: 10px;
+    padding: 20px;
+    border-color: black;
+}
+
+.gender-group {
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+}
+
+ul li {
+    margin-bottom: 10px; 
+}
+
+#tnc{
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    flex-grow: 1;
+}

@@ -1,0 +1,273 @@
+<!--Registration page-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <!---->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--custom css-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/registration.css">
+    <!--scripts-->
+    <script src="./assets/js/script.js"></script>
+
+    <title>SM Raffle Bonanza</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar bg-blue justify-content-between">
+            <img class="navbar-brand-img" src="./assets/images/logo@2x.png" alt="">
+            <div class="ml-auto nav-link">
+                <a href="./index.html" class="btn btn-link">Home</a>
+                <a href="./registation-form.html" class="btn btn-link">Register</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="d-flex flex-column align-items-center">
+        <section class="container-fluid text-center">
+            <div class="py-3">
+                <h3 class="card-title promo-text">Dear Shopper, Welcome!</h3>
+                <p>Thank you for joining! Prepare to win instant rewards and the grand prize.</p>
+            </div>
+            <div class="container-fluid border-bottom">
+                <div class="row justify-content-center">
+
+
+                </div>
+            </div>
+        </section>
+        <section class="container-fluid bg-light py-3">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <form action="#">
+                        <!-- Salutation and Full Name -->
+                        <div class="form-row justify-content-center">
+                            <div class="form-group col-md-2">
+                                <label for="salutation">Salutation <span class="text-danger">*</span></label>
+                                <select class="form-control" id="salutation" required>
+                                    <option value="mx" selected>Mx.</option>
+                                    <option value="mr">Mr.</option>
+                                    <option value="ms">Ms.</option>
+                                    <option value="mrs">Mrs.</option>
+                                    <option value="none">Prefer not to say</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="fullName">Full name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="fullName" placeholder="Juan S. Dela Cruz"
+                                    minlength="3" required>
+                            </div>
+                        </div>
+
+                        <!-- Gender -->
+                        <div class="form-row justify-content-center">
+                            <div class="form-group col-md-8">
+                                <label>Gender <span class="text-danger">*</span></label>
+                                <div class="d-flex align-items-center gender-group">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="male" name="gender"
+                                            value="male" required>
+                                        <label class="form-check-label" for="male">Male</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="female" name="gender"
+                                            value="female">
+                                        <label class="form-check-label" for="female">Female</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="other" name="gender"
+                                            value="other">
+                                        <label class="form-check-label" for="other">Other</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--DOB and Country-->
+                        <div class="form-row justify-content-center">
+                            <div class="form-group col-md-4">
+                                <label for="dateofBirth">Date of birth <span class="text-danger">*</span></label>
+                                <input type="date" class="form-control" id="dateofBirth" required>
+                                <small id="dobError" class="text-danger d-none">Age seems not quite right, please input correct date</small>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="country">Country <span class="text-danger">*</span></label>
+                                <select class="form-control" id="country-select" required>
+                                    <option value="" selected disabled>Select a country</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--mobile number and email-->
+                        <div class="form-row justify-content-center">
+                            <div class="form-group col-md-4">
+                                <label for="mobile">Mobile Number <span class="text-danger">*</span></label>
+                                <input type="tel" class="form-control" id="mobile" name="mobile"
+                                    placeholder="09xxxxxxxx" pattern="^09\d{9}$" required>
+                                <small class="form-text text-muted">Format: 09xxxxxxxx</small>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="firstName">Email <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <!--password-->
+                        <div class="form-row justify-content-center">
+                            <div class="form-group col-md-4">
+                                <label for="createPassword">Password <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="createPassword" name="password"
+                                        required minlength="8" pattern="^(?=.*[0-9])(?=.*[\W_]).{8,}$">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <small class="form-text text-muted">
+                                    <span id="password_minlength"><i class="fa-solid fa-circle-xmark"></i></span> Must
+                                    be at
+                                    least 8 character</small>
+                                <small class="form-text text-muted"><span id="password_numchar"><i
+                                            class="fa-solid fa-circle-xmark"></i></span> contain 1 number
+                                    & 1 special character.</small>
+
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="createPassword">Confirm password <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="confirmPassword"
+                                        name="confirmpassword" required>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="fa-solid fa-eye-slash" id="toggleConfirmPassword"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--terms and conditions-->
+                        <div class="form-row justify-content-center">
+                            <div class="form-group
+                                col-md-8">
+                                <div class="form-check
+                                    form-check-inline">
+                                    <input class="form-check
+                                        input" type="checkbox" id="terms" required>
+                                    <label class="form-check
+                                        label" for="terms">
+                                        By providing your personal data and clicking Register, you consent, agree to our
+                                        <a href="./terms.html" target="_blank">Terms and Conditions</a></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row justify-content-center">
+                            <div class="form-group col-md-8 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+<!--footer-->
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- SM Logo -->
+            <img src="./assets/images/logo-footer.svg" alt="SM Logo" class="img-fluid sm-logo">
+
+            <!-- Wrapper for Footer Content -->
+            <div class="col-md-10 offset-md-2 footer-content">
+                <div class="row">
+                    <!-- Contact Info -->
+                    <div class="col-md-4">
+                        <h5>Contact Us</h5>
+                        <p>7th Floor, MOA Square, Marina Way, Seashell Lane, cor Coral Way, Mall of Asia Complex, Pasay
+                            City,
+                            Philippines</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:customercare@smsupermalls.com">
+                                customercare@smsupermalls.com</a></p>
+                        <!-- Social Media Icons -->
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="col-md-3">
+                        <h5>Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Malls</a></li>
+                            <li><a href="#">Shops</a></li>
+                            <li><a href="#">SM Deals</a></li>
+                            <li><a href="#">SM Mall Sales & Events</a></li>
+                            <li><a href="#">SM Cinema</a></li>
+                            <li><a href="#">Cyberzone</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Latest in SM -->
+                    <div class="col-md-3">
+                        <h5>The Latest in SM</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">SM Stories</a></li>
+                            <li><a href="#">Sales & Promos</a></li>
+                            <li><a href="#">Shopping</a></li>
+                            <li><a href="#">Eat & Drink</a></li>
+                            <li><a href="#">Entertainment</a></li>
+                            <li><a href="#">Lifestyle</a></li>
+                            <li><a href="#">News</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- DPO/DPS Section -->
+                    <div class="col-md-2 text-center">
+                        <img id="dpo" src="./assets/images/dpo_logo.png" alt="DPO DPS Badge" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Bottom Bar -->
+<div class="bottom-bar">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                <i class="fa-circle-info"></i> Note: This project is for educational purposes only and is <strong>not
+                    affiliated</strong> with or endorsed by SM Supermalls.
+            </p>
+        </div>
+    </div>
+</div>
+
+</html>
