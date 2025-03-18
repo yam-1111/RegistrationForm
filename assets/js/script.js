@@ -9,7 +9,7 @@ $(document).ready(function () {
     const today = new Date();
 
     // Calculate min and max dates
-    const minDate = new Date(today.getFullYear() - 100, today.getMonth(), today.getDate()); // 100 years ago
+    const minDate = new Date(today.getFullYear() - 150, today.getMonth(), today.getDate()); // 100 years ago
     const maxDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());  // 18 years ago
 
     // Set min and max attributes for input
@@ -101,6 +101,10 @@ $(document).ready(function () {
             title: "Registration Successful!",
             text: "Thank you for registering!",
             confirmButtonText: "OK"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "index.html";
+            }
         })
     })
 
