@@ -99,10 +99,10 @@ main{
 
 .sm-logo {
     position: absolute;
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* This ensures true vertical centering */
-    left: 1px; /* Fixed distance from left */
-    max-width: 20; /* Fixed width instead of percentage */
+    top: 50%; 
+    transform: translateY(-50%); 
+    left: 1px;
+    max-width: 20; 
     height: auto;
 }
 
