@@ -33,7 +33,8 @@
             <img class="navbar-brand-img" src="./assets/images/logo@2x.png" alt="">
             <div class="ml-auto nav-link">
                 <a href="./index.html" class="btn btn-link">Home</a>
-                <a href="./registation-form.html" class="btn btn-link">Register</a>
+                <a href="./register.html" class="btn btn-link">Register</a>
+                <a href="./login.html" class="btn btn-link">Login</a>
             </div>
         </nav>
     </header>
@@ -54,7 +55,20 @@
         <section class="container-fluid bg-light py-3">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <form action="#">
+                    <form id="registerForm" enctype="multipart/form-data">
+                        <!--profile picture-->
+                        <div class="form-row justify-content-center align-items-center">
+                            <!-- Preview Section -->
+                            <div class="form-group col-md-2 text-center">
+                                <img id="profilePicturePreview" src="./assets/images/default-avatar.png" alt="Profile Preview" class="img-fluid rounded-circle border" style="max-width: 100px; max-height: 100px;">
+                            </div>
+                            <!-- File Input Section -->
+                            <div class="form-group col-md-4">
+                                <label for="profilePicture">Profile Picture</label>
+                                <input type="file" class="form-control-file" id="profilePicture" name="profile_picture" accept="image/*">
+                                <small class="form-text text-muted">Upload a clear photo of yourself.</small>
+                            </div>
+                        </div>  
                         <!-- Salutation and Full Name -->
                         <div class="form-row justify-content-center">
                             <div class="form-group col-md-2">
@@ -70,8 +84,7 @@
 
                             <div class="form-group col-md-6">
                                 <label for="fullName">Full name <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="fullName" placeholder="Juan S. Dela Cruz"
-                                    minlength="3" required>
+                                <input type="text" class="form-control" id="fullName" name="fullname" placeholder="Juan S. Dela Cruz" minlength="3" required>
                             </div>
                         </div>
 
@@ -123,7 +136,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="firstName">Email <span class="text-danger">*</span></label>
-                                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                             </div>
                         </div>
                         <!--password-->
@@ -132,7 +145,7 @@
                                 <label for="createPassword">Password <span class="text-danger">*</span></label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" id="createPassword" name="password"
-                                        required minlength="8" pattern="^(?=.*[0-9])(?=.*[\W_]).{8,}$">
+                                        required>
                                     <div class="input-group-append">
                                         <span class="input-group-text">
                                             <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
@@ -140,20 +153,11 @@
                                     </div>
                                 </div>
 
-                                <small class="form-text text-muted">
-                                    <span id="password_minlength"><i class="fa-solid fa-circle-xmark"></i></span> Must
-                                    be at
-                                    least 8 character</small>
-                                <small class="form-text text-muted"><span id="password_numchar"><i
-                                            class="fa-solid fa-circle-xmark"></i></span> contain 1 number
-                                    & 1 special character.</small>
-
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="createPassword">Confirm password <span class="text-danger">*</span></label>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" id="confirmPassword"
-                                        name="confirmpassword" required>
+                                    <input type="password" class="form-control" id="confirmPassword" name="confirm_password" required>
                                     <div class="input-group-append">
                                         <span class="input-group-text">
                                             <i class="fa-solid fa-eye-slash" id="toggleConfirmPassword"></i>
@@ -169,7 +173,7 @@
                                 <div class="form-check
                                     form-check-inline">
                                     <input class="form-check
-                                        input" type="checkbox" id="terms" required>
+                                        input" type="checkbox" id="terms" name="terms">
                                     <label class="form-check
                                         label" for="terms">
                                         By providing your personal data and clicking Register, you consent, agree to our

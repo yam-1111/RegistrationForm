@@ -1,3 +1,15 @@
+<!--verify if user is login---->
+<?php
+session_start();
+// Redirect to login if user is not logged in
+if (!isset($_SESSION['user'])) {
+    header('Location: index.html');
+    exit;
+}
+$user = $_SESSION['user'];
+?>
+
+<!--Registration page-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,69 +23,68 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <!---->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--custom css-->
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/registration.css">
+    <!--scripts-->
+    <script src="./assets/js/script.js"></script>
+
     <title>SM Raffle Bonanza</title>
 </head>
 
 <body>
     <header>
         <nav class="navbar bg-blue justify-content-between">
-           
-                <img class="navbar-brand-img" src="./assets/images/logo@2x.png" alt="SM Logo">
-          
+            <img class="navbar-brand-img" src="./assets/images/logo@2x.png" alt="">
             <div class="ml-auto nav-link">
                 <a href="./index.html" class="btn btn-link">Home</a>
-                <a href="./register.html" class="btn btn-link">Register</a>
+                <a href="./registation-form.html" class="btn btn-link">Register</a>
                 <a href="./login.html" class="btn btn-link">Login</a>
             </div>
         </nav>
     </header>
 
-    <main class="d-flex flex-column align-items-center text-center">
-        <section class="py-3">
-            <h1>Welcome Dear Shopper!</h1>
-            <span>Please select a promo</span>
+    <main class="d-flex flex-column align-items-center">
+        <section class="container-fluid text-center">
+            <div class="py-3">
+                <h3 class="card-title promo-text">Welcome! </h3>
+            </div>
+                   <!-- User Profile Section -->
+        <div class="container mt-4">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="<?php echo htmlspecialchars($user['profile_picture']); ?>" 
+                                 alt="Profile Picture" 
+                                 class="img-fluid rounded-circle mb-3" 
+                                 style="width: 150px; height: 150px;">
+                            <h4 class="mb-2"><?php echo htmlspecialchars($user['fullname']); ?></h4>
+                            <p class="text-muted"><?php echo htmlspecialchars($user['email']); ?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+            <div class="container-fluid border-bottom">
+                <div class="row justify-content-center">
+
+
+                </div>
+            </div>
         </section>
+        <section class="container-fluid bg-light py-3">
+            <div class="row justify-content-center">
+                <div class="col-12">
 
-        <section>
-            <div class="container">
-                <div class="row justify-content-center"> <!-- Center horizontally -->
-                    <div class="col-md-4">
-                        <div class="card">
-                            <a href="./register.html">
-                                <img src="./assets/images/campaigns/r1.png" class="card-img-top" alt="...">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="promo-text">SM Fairview 3 Day Sale</h5>
-                                <span class="font-weight-bolder text-gray">March 13 - March 20, 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <a href="/register.html">
-                                <img src="./assets/images/campaigns/r2.jpeg" class="card-img-top" alt="...">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="promo-text">SM Cauayan 3 Day Sale</h5>
-                                <span class="font-weight-bolder text-gray">March 28 - March 30, 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <a href="./register.html">
-                                <img src="./assets/images/campaigns/r3.jpeg" class="card-img-top" alt="...">
-                            </a>
-
-                            <div class="card-body">
-                                <h5 class="promo-text">Southies 70% Off</h5>
-                                <span class="font-weight-bolder text-gray">March 14 - March 16, 2025</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -153,13 +164,12 @@
 <div class="bottom-bar">
     <div class="row">
         <div class="col-md-12">
-            <p><i class="fa-circle-info"></i>
-                Note: This project is for educational purposes only and is <strong>not affiliated</strong> with or
-                endorsed by SM Supermalls.
+            <p>
+                <i class="fa-circle-info"></i> Note: This project is for educational purposes only and is <strong>not
+                    affiliated</strong> with or endorsed by SM Supermalls.
             </p>
         </div>
     </div>
 </div>
-
 
 </html>
