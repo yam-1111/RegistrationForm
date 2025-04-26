@@ -6,7 +6,13 @@ if (!isset($_SESSION['user'])) {
     header('Location: index.html');
     exit;
 }
+
 $user = $_SESSION['user'];
+
+// fallback values
+$profilePicture = $_SESSION['user']['profile_picture'] ?? './assets/images/default-avatar.png';
+$fullname = $_SESSION['user']['fullname'] ?? 'Guest';
+$email = $_SESSION['user']['email'] ?? '';
 ?>
 
 <!--Registration page-->
@@ -45,7 +51,7 @@ $user = $_SESSION['user'];
             <div class="ml-auto nav-link">
                 <a href="./index.html" class="btn btn-link">Home</a>
                 <a href="./registation-form.html" class="btn btn-link">Register</a>
-                <a href="./login.html" class="btn btn-link">Login</a>
+                <a href="./login.php" class="btn btn-link">Login</a>
             </div>
         </nav>
     </header>
@@ -61,11 +67,11 @@ $user = $_SESSION['user'];
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body text-center">
-                            <img src="<?php echo htmlspecialchars($user['profile_picture']); ?>" 
+                            <img src="<?= htmlspecialchars($profilePicture) ?>" 
                                  alt="Profile Picture" 
                                  class="img-fluid rounded-circle mb-3" 
                                  style="width: 150px; height: 150px;">
-                            <h4 class="mb-2"><?php echo htmlspecialchars($user['fullname']); ?></h4>
+                            <h4 class="mb-2"> <?= htmlspecialchars($fullname) ?></h4>
                             <p class="text-muted"><?php echo htmlspecialchars($user['email']); ?></p>
                         </div>
                     </div>
