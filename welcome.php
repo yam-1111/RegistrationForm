@@ -7,6 +7,13 @@ if (!isset($_SESSION['user'])) {
     exit;
 }
 
+// logout
+if (isset($_GET['logout'])) {
+    session_destroy();
+    header('Location: index.html');
+    exit;
+}
+
 $user = $_SESSION['user'];
 
 // fallback values
@@ -59,7 +66,7 @@ $email = $_SESSION['user']['email'] ?? '';
     <main class="d-flex flex-column align-items-center">
         <section class="container-fluid text-center">
             <div class="py-3">
-                <h3 class="card-title promo-text">Welcome! </h3>
+                <h3 class="card-title promo-text">Welcome dear member!</h3>
             </div>
                    <!-- User Profile Section -->
         <div class="container mt-4">
@@ -73,6 +80,9 @@ $email = $_SESSION['user']['email'] ?? '';
                                  style="width: 150px; height: 150px;">
                             <h4 class="mb-2"> <?= htmlspecialchars($fullname) ?></h4>
                             <p class="text-muted"><?php echo htmlspecialchars($user['email']); ?></p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="welcome.php?logout=true" class="btn btn-primary">Logout</a>
                         </div>
                     </div>
                 </div>
